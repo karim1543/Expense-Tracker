@@ -4,6 +4,7 @@ import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
 import Dashboard from './pages/Dashboard';
 import { useContext } from 'react';
+import Navbar from './components/NavBar';
 
 const PrivateRoute = ({ children }) => {
   const { user } = useContext(AuthContext);
@@ -13,6 +14,7 @@ function App() {
   return (
   <AuthProvider>
       <Router>
+        <Navbar />
         <Routes>
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
